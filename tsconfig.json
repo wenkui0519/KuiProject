@@ -4,22 +4,38 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
+    "target": "es5",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@service/*": [
+        "core/service/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@web-class": [
+        "/src/app/class"
+      ],
+      "@web-core/*": [
+        "/src/app/core/*"
+      ],
+      "@web-shared/*": [
+        "/src/app/shared/*"
+      ],
+      "@web-script/*": [
+        "/src/app/script/*"
+      ],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

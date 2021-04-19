@@ -1,0 +1,96 @@
+@import "./eoffice/base/variables";
+// 高度及其他基础样式调整
+@import "./eoffice/override/base.scss";
+@import "./bootstrap/bootstrap";
+//icon
+// @import "./eoffice/icons/eoffice-icons";
+//component
+@import "./eoffice/component/content";
+@import "./eoffice/print/print";
+@import "./eoffice/component/custom-field";
+// @import "./eoffice/component/grid";
+// @import "./eoffice/component/editor";
+// @import "./eoffice/component/read-status";
+// @import "./eoffice/component/search";
+// @import "./eoffice/component/select";
+// @import "./eoffice/component/datepicker";
+// @import "./eoffice/component/modal";
+// @import "./eoffice/component/selector";
+// @import "./eoffice/component/radio";
+// @import "./eoffice/component/checkbox";
+// @import "./eoffice/component/flow/flow";
+// @import "./eoffice/component/flow/form-simple";
+// @import "./eoffice/component/flow/form-child";
+// @import "./eoffice/component/flow/form-builder";
+// @import "./eoffice/component/emoji";
+// @import "./eoffice/component/tag";
+// @import "./eoffice/component/popover";
+// @import "./eoffice/component/notify";
+// @import "./eoffice/component/mentions";
+// @import "./eoffice/component/card-batches"; // 批量卡片样式
+// @import "./eoffice/component/side-modal"; // 侧边栏样式
+// @import "./eoffice/component/import";
+// @import "./eoffice/component/lightgallery";
+// @import "./eoffice/component/tooltip";
+// @import "./eoffice/component/treeview";
+// //bootstrap修正
+// @import "./eoffice/override/alert";
+// @import "./eoffice/override/buttons";
+// @import "./eoffice/override/close";
+// @import "./eoffice/override/dropdown";
+// @import "./eoffice/override/form";
+// @import "./eoffice/override/hover";
+// @import "./eoffice/override/input-group";
+// @import "./eoffice/override/list-group";
+// @import "./eoffice/override/modal";
+// @import "./eoffice/override/nav";
+// @import "./eoffice/override/navbar";
+// @import "./eoffice/override/reboot";
+// @import "./eoffice/override/spacing";
+// @import "./eoffice/override/table";
+// @import "./eoffice/override/tags";
+// @import "./eoffice/override/img";
+// @import "./eoffice/override/lightgallery";
+// //bootstrap修正-utils文件夹
+// @import "./eoffice/override/utils/cursor";
+// @import "./eoffice/override/utils/pulls";
+// @import "./eoffice/override/utils/text";
+// //mixins
+// @import "./eoffice/layout/layout";
+// @import "./eoffice/layout/scroll-bar";
+// // module
+// @import "./eoffice/module/attendance";
+// @import "./eoffice/module/customer";
+// @import "./eoffice/module/task";
+// @import "./eoffice/module/email";
+// @import "./eoffice/module/incomeexpense";
+// // @import "module/lang/global";
+// @import "./eoffice/module/form-modeling";
+// @import "./eoffice/module/chat";
+// @import "./eoffice/module/website-search";
+//组件主题文件
+// @import "./eoffice/theme/theme";
+//base主题，编译组件主题文件
+// @import "./eoffice/base/theme";
+
+// 使用font awesome图标提示(后期会移除)
+.fa {
+    background: red;
+
+    &::before {
+        content: "我是fa，我需要更换";
+        color: #fff;
+    }
+}
+
+// 当小于1024时，需要添加横向滚动条，这里需要覆盖bootstrap里的overflow:hidden样式
+body {
+    overflow-x: inherit;
+    min-width: 1024px;
+}
+
+@media print {
+    body {
+        background: #fff;
+    }
+}

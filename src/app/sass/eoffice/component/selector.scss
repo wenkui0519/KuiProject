@@ -1,0 +1,25 @@
+.selector-modal-body {
+    .filter-wrap-tab {
+        .#{$prefix}nav-tabs {
+            .#{$prefix}nav-link {
+                padding: 0 0.5rem;
+                border: 0;
+                border-bottom: 2px solid transparent;
+                line-height: 2rem;
+            }
+        }
+        .tab-title {
+            display: inline-block;
+            margin-left: 0.25rem;
+            // max-width: 2.5rem;
+            line-height: 14px;
+        }
+        .tab-content {
+            margin-top: 0.5rem;
+            margin-right: -1rem;
+            margin-bottom: 0;
+            margin-left: 0;
+            padding: 0;
+        }
+    }
+}

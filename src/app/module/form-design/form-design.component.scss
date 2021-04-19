@@ -14,11 +14,13 @@
     height: calc(100% - 50px);
 
     .form-builder-menu {
+        box-sizing: border-box;
         height: 100%;
         width: 60px;
         border-right: 1px solid #efefef;
     }
     .form-builder-control{
+        box-sizing: border-box;
         position: absolute;
         height: 100%;
         top: 0;
@@ -30,6 +32,7 @@
         border-right: 1px solid #efefef;
     }
     .form-builder-content{
+        box-sizing: border-box;
         position: absolute;
         height: 100%;
         left: calc(240px + 60px);
@@ -38,8 +41,9 @@
         bottom: 0;
     }
     .form-builder-attribute {
+        box-sizing: border-box;
         position: absolute;
-        width: 280px;
+        width: 250px;
         height: 100%;
         top: 0;
         right: 0;

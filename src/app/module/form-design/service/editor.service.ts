@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { angular } from 'src/app/core/angular-utils'
 import { ControlConfigService } from '../utils/service/control-config.service';
-import * as jQuery from 'jquery'
 
 
 @Injectable({

@@ -100,7 +100,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-                "node_modules/jquery/dist/jquery.min.js"
+                "node_modules/jquery/index.d.js"
             ]
           }
         },

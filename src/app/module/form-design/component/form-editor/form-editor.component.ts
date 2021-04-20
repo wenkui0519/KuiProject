@@ -169,11 +169,37 @@ export class FormEditorComponent implements OnInit {
     }
 
     addControl(type) {
-        console.log('插入控件了')
         let controlId, controlTitle, controlName;
+        // 拿到当前表单内容中所有的控件，遍历后拿到当前控件idcount ++，更新到全局服务中的属性
+        const allControlItem = jQuery(tinymce.get('form-editor').getbody()).find('*[data-efb-control]');
+        angular.foreach(allControlItem,item=>{
+          const newCount = Number(data.id.replace('Data_',''));
+          if(newCount>this.attributeService.controlCount){
+            this.attributeService.controlCount = newCount;
+          }
+        })
 
-        const controlHtml = this.editorService.getControlHtml(type, controlId, controlTitle, controlName)
-        tinymce.execCommand('mceInsertContent', false, controlHtml);
+	      //给controlId赋值。
+	      this.attributeService.controlCount++;
+	      controlId = `Data_${this.attributeService.controlCount}`;
+
+	      //controlTitle,赋值，去controlConfig中拿默认title+count。
+	      controlTitle = `${this.controlService.controlList()[type]['title']}_${this.attributeService.controlCount}`
+
+        const controlHtml = this.editorService.getControlHtml(type, controlId, controlTitle, this.controlService.controlList()[type]['title'])
+        
+        // 如何当前选中在某个控件上，则将选区移动到控件之后
+        if (tinymce.get('form-editor').dom.is(tinymce.get('form-editor').selection.getNode(), '[data-efb-control]')) {
+            tinymce.get('form-editor').selection.collapse();
+        }
+      
+	      tinymce.execCommand('mceInsertContent', false, controlHtml);
+      
+//         console.log('插入控件了')
+//         let controlId, controlTitle, controlName;
+
+//         const controlHtml = this.editorService.getControlHtml(type, controlId, controlTitle, controlName)
+//         tinymce.execCommand('mceInsertContent', false, controlHtml);
     }
 
 }

@@ -46,8 +46,6 @@ export class TemplateComponent implements OnInit, OnChanges, AfterContentInit {
         const componentRef = this.seat.createComponent(componentFactory);
 
         (componentRef.instance)['attribute'] = this.attributeValue;
-        (componentRef.instance)['layoutInfo'] = this.layoutInfo;
-        (componentRef.instance)['collection'] = this.collection;
 
         this.ref.detectChanges();
     }

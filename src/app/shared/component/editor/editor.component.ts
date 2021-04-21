@@ -21,9 +21,9 @@ import 'tinymce/plugins/preview';
 import 'tinymce/plugins/insertdatetime';
 import 'tinymce/plugins/searchreplace';
 import 'tinymce/plugins/autoresize';
-import 'web/src/assets/tinymce/plugins/commonphrase/plugin.js';
-import 'web/src/assets/tinymce/plugins/emoji/plugin.js';
-import 'web/src/assets/tinymce/plugins/powerpaste/plugin.js';
+// import 'src/assets/tinymce/plugins/commonphrase/plugin.js';
+import 'src/assets/tinymce/plugins/emoji/plugin.js';
+import 'src/assets/tinymce/plugins/powerpaste/plugin.js';
 
 import { angular } from 'src/app/core/angular-utils'
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-control-list',
+  selector: 'form-control-list',
   templateUrl: './control-list.component.html',
   styleUrls: ['./control-list.component.scss']
 })

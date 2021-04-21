@@ -16,7 +16,8 @@ export class ControlConfigService {
                 },
                 'title': '编辑器',
                 'attribute': {
-                    'base': ['type', 'title', 'editor', 'id'],
+                    // 'base': ['type', 'title', 'editor', 'id'],
+                    'base': ['title',],
                     'style': ['width', 'height'],
                     'display': ['display-condition'],
                     'other': ['id']

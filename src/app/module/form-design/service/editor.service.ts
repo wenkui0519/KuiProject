@@ -20,7 +20,7 @@ export class EditorService {
      * @param controlTitle
      * @param controlName
      */
-    getControlHtml(controlType, controlId, controlTitle, controlName, attribute?) {
+    getControlHtml(controlType, controlId, controlTitle, controlName) {
         const controlView = this.controlConfigService.controlList()[controlType].view,
             controlDefault = this.controlConfigService.controlList()[controlType].default ?
                 this.controlConfigService.controlList()[controlType].default : {},
@@ -52,24 +52,6 @@ export class EditorService {
         for (const item in controlDefault) {
             if (item.indexOf('data-') !== -1) {
                 $controlObj.attr(item, controlDefault[item]);
-            }
-        }
-        // 把默认属性加进来
-        if (attribute && angular.isObject(attribute)) {
-            for (const item in attribute) {
-                if (item) {
-                    if (angular.isObject(attribute[item])) {
-                        $controlObj.attr(item, angular.toJson(attribute[item]));
-                    } else {
-                        $controlObj.attr(item, attribute[item]);
-                    }
-                    if (item === 'data-efb-height') {
-                        $controlObj.css('height', attribute[item]);
-                    }
-                    if (item === 'data-efb-btn-text') {
-                        $controlObj.html(attribute[item]);
-                    }
-                }
             }
         }
 

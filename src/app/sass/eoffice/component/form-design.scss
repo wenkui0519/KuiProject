@@ -1,0 +1,127 @@
+.eui-form-group {
+  margin-bottom: 12px;
+}
+
+.eui-input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.eui-form-group,
+.form-errors-container {
+  position: relative;
+}
+
+.eui-form-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.eui-form-control,
+.eui-form-label {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.eui-form-control-label {
+  min-width: 25%;
+}
+
+.eui-form-control-content {
+  padding-right: 0;
+  padding-left: 15px;
+  flex: 1;
+}
+
+.eui-input-group>.eui-form-control:not(:last-child),
+.eui-input-group>.eui-custom-select:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.eui-input-group .eui-form-control {
+  z-index: auto;
+}
+
+.eui-form-control:disabled,
+.eui-form-control[readonly] {
+  background-color: #f5f5f5;
+  color: #bfbfbf;
+}
+
+.eui-input-group>.eui-form-control,
+.eui-input-group>.eui-form-control-plaintext,
+.eui-input-group>.eui-custom-select,
+.eui-input-group>.eui-custom-file {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.eui-form-control:disabled,
+.eui-form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+.eui-form-control {
+  display: block;
+  width: 100%;
+  // height: calc(1.875rem + 2px);
+  height: 32px;
+  padding: 0.28125rem 0.5625rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.125rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-sizing: border-box;
+}
+
+.eui-form-control-static {
+  padding-top: 0.28125rem;
+  padding-bottom: 0.28125rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #333333;
+  background-color: transparent;
+  border: solid transparent;
+  border-width: 1px 0;
+}
+
+.eui-input-group-prepend,
+.eui-input-group-append {
+  cursor: pointer;
+  display: flex;
+  flex: 0 0 32px;
+}
+
+.eui-input-group-text {
+  flex: 1;
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef60;
+  border: 1px solid #ced4da;
+  transition: all .2s;
+
+  &:hover {
+    background-color: #e9ecef;
+  }
+}

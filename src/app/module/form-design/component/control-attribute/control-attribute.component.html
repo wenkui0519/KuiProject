@@ -4,12 +4,12 @@
     <attribute-template [attributeValue]="attributeValue" class="attribute-list" *ngFor="let item of attributes.base"
       [name]="item"></attribute-template>
   </div>
-  <!-- <div class="attribute-container" *ngIf="attributes.style && attributeValue && attributes.style.length > 0">
+  <div class="attribute-container" *ngIf="attributes.style && attributeValue && attributes.style.length > 0">
       <h5 class="eui-m-l-1">样式设置</h5>
       <attribute-template [attributeValue]="attributeValue" class="attribute-list"
           *ngFor="let item of attributes.style" [name]="item"></attribute-template>
   </div>
-  <div class="attribute-container" *ngIf="attributeValue && attributes.display && attributes.display.length > 0">
+  <!-- <div class="attribute-container" *ngIf="attributeValue && attributes.display && attributes.display.length > 0">
       <h5 class="eui-m-l-1">显示设置</h5>
       <attribute-template [attributeValue]="attributeValue" class="attribute-list"
           *ngFor="let item of attributes.display" [name]="item" [layoutInfo]="layoutInfo"></attribute-template>

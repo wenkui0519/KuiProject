@@ -13,6 +13,7 @@
 // @import "./eoffice/component/flow/form-child";
 // @import "./eoffice/component/flow/form-builder";
 // @import "./eoffice/component/emoji";
+@import "./eoffice/component/form-design.scss";
 
 // 当小于1024时，需要添加横向滚动条，这里需要覆盖bootstrap里的overflow:hidden样式
 body {

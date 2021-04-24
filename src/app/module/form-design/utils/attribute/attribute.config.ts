@@ -1,3 +1,9 @@
+import { TitleComponent } from './title/title.component';
+import { TypeComponent } from './type/type.component';
+import { IdComponent } from './id/id.component';
+import { WidthComponent } from './width/width.component';
+import { HeightComponent } from './height/height.component';
+
 // import { AllowSetStyleComponent } from './allow-set-style/allow-set-style.component';
 // import { AmountComponent } from './amount/amount.component';
 // import { AttachmentTemplateComponent } from './attachment-template/attachment-template.component';
@@ -17,9 +23,7 @@
 // import { FontSizeComponent } from './font-size/font-size.component';
 // import { ForegroundComponent } from './foreground/foreground.component';
 // import { FormatComponent } from './format/format.component';
-// import { HeightComponent } from './height/height.component';
 // import { HideComponent } from './hide/hide.component';
-// import { IdComponent } from './id/id.component';
 // import { LinkComponent } from './link/link.component';
 // import { MultipleComponent } from './multiple/multiple.component';
 // import { OptionComponent } from './option/option.component';
@@ -30,48 +34,46 @@
 // import { ShowBorderComponent } from './show-border/show-border.component';
 // import { ShowNameComponent } from './show-name/show-name.component';
 // import { SignaturePictureAttributeComponent } from './signature-picture-attribute/signature-picture-attribute.component';
-import { TitleComponent } from './title/title.component';
-// import { TypeComponent } from './type/type.component';
 // import { UploadComponent } from './upload/upload.component';
-// import { WidthComponent } from './width/width.component';
 // import { BarcodeComponent } from './barcode/barcode.component';
 
 export const ATTRIBUTE = {
-    // 'allowSetStyle': AllowSetStyleComponent,
-    // 'auto-height': AutoHeightComponent,
-    // 'background': BackgroundComponent,
-    // 'border': BorderComponent,
-    // 'column': ColumnComponent,
-    // 'countersign-attribute': CountersignAttributeComponent,
-    // 'signature-picture-attribute': SignaturePictureAttributeComponent,
-    // 'data-selector': DataSelectorComponent,
-    // 'datasource': DatasourceComponent,
-    // 'detail-layout': DetailLayoutComponent,
-    // 'dynamic-info': DynamicInfoComponent,
-    // 'editor': EditorComponent,
-    // 'fontFamily': FontFamilyComponent,
-    // 'fontSize': FontSizeComponent,
-    // 'foreground': ForegroundComponent,
-    // 'format': FormatComponent,
-    // 'height': HeightComponent,
-    // 'hide': HideComponent,
-    // 'id': IdComponent,
-    // 'multiple': MultipleComponent,
-    // 'option': OptionComponent,
-    // 'orientation': OrientationComponent,
-    // 'select-datasource': SelectDatasourceComponent,
-    // 'select-option': SelectOptionComponent,
-    // 'show-border': ShowBorderComponent,
-    // 'show-name': ShowNameComponent,
-    'title': TitleComponent,
-    // 'type': TypeComponent,
-    // 'upload': UploadComponent,
-    // 'width': WidthComponent,
-    // 'attachment-template': AttachmentTemplateComponent,
-    // 'display-condition': DisplayConditionComponent,
-    // 'link': LinkComponent,
-    // 'default': DefaultComponent,
-    // 'placeholder': PlaceholderComponent,
-    // 'amount': AmountComponent,
-    // 'barcode': BarcodeComponent
+  'id': IdComponent,
+  'title': TitleComponent,
+  'type': TypeComponent,
+  'width': WidthComponent,
+  'height': HeightComponent,
+
+  // 'allowSetStyle': AllowSetStyleComponent,
+  // 'auto-height': AutoHeightComponent,
+  // 'background': BackgroundComponent,
+  // 'border': BorderComponent,
+  // 'column': ColumnComponent,
+  // 'countersign-attribute': CountersignAttributeComponent,
+  // 'signature-picture-attribute': SignaturePictureAttributeComponent,
+  // 'data-selector': DataSelectorComponent,
+  // 'datasource': DatasourceComponent,
+  // 'detail-layout': DetailLayoutComponent,
+  // 'dynamic-info': DynamicInfoComponent,
+  // 'editor': EditorComponent,
+  // 'fontFamily': FontFamilyComponent,
+  // 'fontSize': FontSizeComponent,
+  // 'foreground': ForegroundComponent,
+  // 'format': FormatComponent,
+  // 'hide': HideComponent,
+  // 'multiple': MultipleComponent,
+  // 'option': OptionComponent,
+  // 'orientation': OrientationComponent,
+  // 'select-datasource': SelectDatasourceComponent,
+  // 'select-option': SelectOptionComponent,
+  // 'show-border': ShowBorderComponent,
+  // 'show-name': ShowNameComponent,
+  // 'upload': UploadComponent,
+  // 'attachment-template': AttachmentTemplateComponent,
+  // 'display-condition': DisplayConditionComponent,
+  // 'link': LinkComponent,
+  // 'default': DefaultComponent,
+  // 'placeholder': PlaceholderComponent,
+  // 'amount': AmountComponent,
+  // 'barcode': BarcodeComponent
 };

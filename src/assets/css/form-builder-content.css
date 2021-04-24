@@ -7335,3 +7335,6 @@ p[data-mce-caret="before"] {
     white-space: nowrap;
     z-index: 10002;
   } */
+  .mce-offscreen-selection{
+      display: none;
+  }

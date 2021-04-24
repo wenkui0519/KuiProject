@@ -1,0 +1,15 @@
+<div class="eui-form-group">
+    <label class="eui-form-control-label" title="宽度">
+        宽度
+    </label>
+    <div class="eui-form-control-content">
+        <div class="eui-input-group">
+            <input class="eui-form-control" [(ngModel)]="width" (ngModelChange)="changeWidth($event)" type="text"/>
+            <div class="eui-input-group-append">
+              <span class='eui-input-group-text eui-btn' (click)='setAutoWidth()' title="宽度自适应">
+                  ...
+              </span>
+          </div>
+        </div>
+    </div>
+</div>

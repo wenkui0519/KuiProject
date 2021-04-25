@@ -50,42 +50,42 @@ export class ControlConfigService {
                     'data-efb-format': 'text',
                 }
             },
-            // 'textarea': {
-            //     'view': {
-            //         'nodeName': 'span',
-            //         'class': 'control-default-textarea',
-            //     },
-            //     'title': '多行文本框',
-            //     'attribute': {
-            //         'base': ['type', 'title', 'placeholder', 'default', 'datasource', 'id'],
-            //         'style': ['width', 'auto-height', 'fontSize', 'fontFamily', 'foreground', 'background', 'border'],
-            //         'display': ['hide', 'display-condition'],
-            //         'other': ['id']
-            //     },
-            //     'attributes': [
-            //         'width',
-            //         'height',
-            //         'font-size',
-            //         'font-family',
-            //         'color',
-            //         'background-color',
-            //         'border',
-            //         'border-bottom',
-            //         'data-efb-border-type',
-            //         'data-efb-default',
-            //         'data-efb-placeholder',
-            //         'data-efb-placeholder-type',
-            //         'data-efb-display-condition'
-            //     ],
-            //     'default': {
-            //         'height': '50px',
-            //         'width': '200px',
-            //         'fontSize': '12px',
-            //         'foreground': '#333333',
-            //         'background-color': '#ffffff',
-            //         'border': '1px solid #ccc'
-            //     }
-            // },
+            'textarea': {
+                'view': {
+                    'nodeName': 'span',
+                    'class': 'control-default-textarea',
+                },
+                'title': '多行文本框',
+                'attribute': {
+                    // 'base': ['type', 'title', 'placeholder', 'default', 'datasource', 'id'],
+                    'base': ['type', 'title', 'placeholder','id'],
+                    'style': ['width', 'auto-height', 'fontSize', 'fontFamily', 'foreground', 'background', 'border'],
+                    'display': ['hide', 'display-condition'],
+                },
+                'attributes': [
+                    'width',
+                    'height',
+                    'font-size',
+                    'font-family',
+                    'color',
+                    'background-color',
+                    'border',
+                    'border-bottom',
+                    'data-efb-border-type',
+                    'data-efb-default',
+                    'data-efb-placeholder',
+                    'data-efb-placeholder-type',
+                    'data-efb-display-condition'
+                ],
+                'default': {
+                    'height': '50px',
+                    'width': '200px',
+                    'fontSize': '12px',
+                    'foreground': '#333333',
+                    'background-color': '#ffffff',
+                    'border': '1px solid #ccc'
+                }
+            },
             // 'radio': {
             //     'view': {
             //         'nodeName': 'span',

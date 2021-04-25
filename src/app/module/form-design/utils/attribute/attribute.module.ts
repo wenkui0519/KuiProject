@@ -7,6 +7,9 @@ import { IdComponent } from './id/id.component';
 import { TypeComponent } from './type/type.component';
 import { WidthComponent } from './width/width.component';
 import { HeightComponent } from './height/height.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
+
+
 @NgModule({
     imports: [
         CommonModule,
@@ -19,6 +22,7 @@ import { HeightComponent } from './height/height.component';
         TypeComponent,
         WidthComponent,
         HeightComponent,
+        PlaceholderComponent,
     ],
     entryComponents: [
         TitleComponent,
@@ -26,6 +30,7 @@ import { HeightComponent } from './height/height.component';
         TypeComponent,
         WidthComponent,
         HeightComponent,
+        PlaceholderComponent,
     ],
 })
 export class AttributeModule { }

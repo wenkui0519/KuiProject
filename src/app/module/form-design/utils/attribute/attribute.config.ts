@@ -3,6 +3,7 @@ import { TypeComponent } from './type/type.component';
 import { IdComponent } from './id/id.component';
 import { WidthComponent } from './width/width.component';
 import { HeightComponent } from './height/height.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 // import { AllowSetStyleComponent } from './allow-set-style/allow-set-style.component';
 // import { AmountComponent } from './amount/amount.component';
@@ -28,7 +29,6 @@ import { HeightComponent } from './height/height.component';
 // import { MultipleComponent } from './multiple/multiple.component';
 // import { OptionComponent } from './option/option.component';
 // import { OrientationComponent } from './orientation/orientation.component';
-// import { PlaceholderComponent } from './placeholder/placeholder.component';
 // import { SelectDatasourceComponent } from './select-datasource/select-datasource.component';
 // import { SelectOptionComponent } from './select-option/select-option.component';
 // import { ShowBorderComponent } from './show-border/show-border.component';
@@ -43,6 +43,8 @@ export const ATTRIBUTE = {
   'type': TypeComponent,
   'width': WidthComponent,
   'height': HeightComponent,
+  'placeholder': PlaceholderComponent,
+
 
   // 'allowSetStyle': AllowSetStyleComponent,
   // 'auto-height': AutoHeightComponent,
@@ -73,7 +75,6 @@ export const ATTRIBUTE = {
   // 'display-condition': DisplayConditionComponent,
   // 'link': LinkComponent,
   // 'default': DefaultComponent,
-  // 'placeholder': PlaceholderComponent,
   // 'amount': AmountComponent,
   // 'barcode': BarcodeComponent
 };

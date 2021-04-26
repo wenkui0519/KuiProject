@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
-import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { debounceTime } from 'rxjs/operators';
+
 
 @Injectable({
     providedIn: 'root'
@@ -8,25 +10,24 @@ import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 export class ModalService {
     constructor(
         private modal: NzModalService,
-        private modelRef: NzModalRef
     ) { }
+    private modalTemp;
 
     open(data): void {
-        const modal = this.modal.create({
+        this.modalTemp = this.modal.create({
             nzTitle: data.title,
             nzContent: data.component,
             nzComponentParams: data.params,
-        });
-        modal.afterClose.subscribe(res => {
-            if (res) {
-                data.closed(res)
-            }
+            nzFooter: null,
+        })
+        this.modalTemp.afterClose.pipe(debounceTime(10)).subscribe(res => {
+            data.closed(res)
         })
     }
     close() {
-        this.modelRef.destroy()
+        this.modalTemp.destroy()
     }
     ok(data) {
-        this.modelRef.destroy({ data: data })
+        this.modalTemp.destroy(data)
     }
 }

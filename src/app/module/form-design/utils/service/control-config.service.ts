@@ -18,7 +18,7 @@ export class ControlConfigService {
                 'title': '单行文本框',
                 'attribute': {
                     // 'base': ['type', 'title', 'placeholder', 'format', 'datasource', 'id'],
-                    'base': ['type', 'title', 'placeholder'],
+                    'base': ['type', 'title', 'placeholder', 'id'],
                     'style': ['width', 'height', 'fontSize', 'fontFamily', 'foreground', 'background', 'border'],
                     'display': ['hide', 'display-condition']
                 },

@@ -19,10 +19,9 @@ export class DemoModalComponent implements OnInit {
             this.text = this.params.text;
         }
     }
-    close(){
-        this.modalService.close();
-    }
+    
     ok(){
-        this.modalService.ok('ok');
+        const data = 'ok'
+        this.modalService.ok(data);
     }
 }

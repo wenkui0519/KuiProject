@@ -137,7 +137,7 @@ export class FormEditorComponent implements OnInit {
         const allControlItem = $(tinymce.get('form-editor').getBody()).find('*[data-efb-control]');
         angular.forEach(allControlItem, item => {
             if (item && item.id) {
-                const newCount = Number(item.id.replace('Data_', ''));
+                const newCount = Number(item.id.replace('DATA_', ''));
                 if (newCount > this.attributeService.controlCount) {
                     this.attributeService.controlCount = newCount;
                 }
@@ -148,7 +148,7 @@ export class FormEditorComponent implements OnInit {
 
         //给controlId赋值。
         this.attributeService.controlCount++;
-        controlId = `Data_${this.attributeService.controlCount}`;
+        controlId = `DATA_${this.attributeService.controlCount}`;
 
         //controlTitle,赋值，去controlConfig中拿默认title+count。
         controlTitle = `${this.controlService.controlList()[type]['title']}_${this.attributeService.controlCount}`

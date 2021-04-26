@@ -18,7 +18,7 @@ export class ModalComponent implements OnInit {
     open() {
         const params = {
             title: 'demo modal',
-            Component: DemoModalComponent,
+            component: DemoModalComponent,
             params: {
                 text: 'hello world'
             },

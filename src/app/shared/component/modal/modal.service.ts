@@ -21,7 +21,9 @@ export class ModalService {
             nzFooter: null,
         })
         this.modalTemp.afterClose.pipe(debounceTime(10)).subscribe(res => {
-            data.closed(res)
+            if (res) {
+                data.closed(res)
+            }
         })
     }
     close() {

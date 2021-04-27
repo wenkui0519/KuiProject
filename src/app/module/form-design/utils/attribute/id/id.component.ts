@@ -16,7 +16,7 @@ import { IdModalComponent } from '../id-modal/id-modal.component';
 })
 export class IdComponent implements OnInit {
     @Input() attribute: object;
-    public id: string;
+    public id;
 
     constructor(
         private ref: ChangeDetectorRef,
@@ -24,14 +24,13 @@ export class IdComponent implements OnInit {
         private modalService: ModalService,
     ) {
     }
-    public currentId: string;
+    public currentId;
     ngOnInit() {
         this.currentId = this.attributeService.get(this.attribute, 'id', 'attribute');
         this.id = this.currentId ? this.currentId.replace('DATA_', '') : '';
     }
 
     openModal() {
-        console.log(this.id)
         const params = {
             title: 'ID',
             component: IdModalComponent,

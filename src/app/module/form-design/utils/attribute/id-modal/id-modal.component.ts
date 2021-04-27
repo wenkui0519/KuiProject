@@ -9,37 +9,43 @@ import { AttributeService } from '../../service/attribute.service';
     styleUrls: ['./id-modal.component.scss']
 })
 export class IdModalComponent implements OnInit {
-    @Input() params;
-    public id: any;
     constructor(
         private modalService: ModalService,
-        private attributeService:AttributeService,
+        private attributeService: AttributeService,
     ) { }
 
+    private _id;
+    @Input() set id(value) {
+        this._id = value || '';
+    };
+    get id() {
+        return this._id;
+    }
+    public currentId: any;
+
     ngOnInit() {
-        if (this.params) {
-            this.id = this.params.id
-        }
+        this.currentId = this.id
     }
     ok() {
-        if (this.id == '' || $.trim(this.id) === '') {
+        if (this.currentId == '' || $.trim(this.currentId) === '') {
             alert('控件ID不能为空');
             return false;
         }
         let flag = false;
-        // const controlList = this.attributeService.getParentControls('', 'all');
-        // if (controlList && controlList.length > 0) {
-        //     angular.forEach(controlList, data => {
-        //         if (this.params['id'] !== this.id && data.id === 'DATA_' + this.id) {
-        //             flag = true;
-        //         }
-        //     });
-        // }
+        // 拿到所有控件列表
+        const controlList = this.attributeService.getParentControls('', 'all');
+        if (controlList && controlList.length > 0) {
+            angular.forEach(controlList, data => {
+                if (this.currentId !== this.id && data.id === 'DATA_' + this.currentId) {
+                    flag = true;
+                }
+            });
+        }
         if (flag) {
             alert('此控件ID已被占用，请重新设置');
             return false;
         }
-        this.modalService.ok(this.id);
+        this.modalService.ok(this.currentId);
     }
 
 }

@@ -7,17 +7,13 @@ import { ModalService } from 'src/app/shared/component/modal/modal.service';
     styleUrls: ['./demo-modal.component.scss']
 })
 export class DemoModalComponent implements OnInit {
-    @Input() params;
+    @Input() text;
 
     constructor(
         private modalService: ModalService,
     ) { }
-    public text;
 
     ngOnInit() {
-        if(this.params){
-            this.text = this.params.text;
-        }
     }
     
     ok(){

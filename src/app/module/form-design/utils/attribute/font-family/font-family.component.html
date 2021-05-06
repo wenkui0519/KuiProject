@@ -1,0 +1,10 @@
+<div class="eui-form-group">
+    <label class="eui-form-control-label" title="字体">
+        字体
+    </label>
+    <div class="eui-form-control-content">
+        <select class="eui-form-control" [(ngModel)]="fontFamily" (ngModelChange)="changeFontFamily()">
+            <option value="{{option}}" *ngFor="let option of fontFamilyList">{{option}}</option>
+        </select>
+    </div>
+</div>

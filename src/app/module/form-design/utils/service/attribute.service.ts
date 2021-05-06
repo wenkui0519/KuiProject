@@ -36,6 +36,19 @@ export class AttributeService {
         }
         return result;
     }
+
+    remove(element, attrName, type?) {
+        if (element instanceof jQuery) {
+            switch (type) {
+                case 'style':
+                    element['css'](attrName, '');
+                    break;
+                default:
+                    jQuery(element).removeAttr(attrName);
+                    break;
+            }
+        }
+    }
     /**
      * 获取父级控件列表
      * @param {string} currentId 当前控件id
@@ -45,10 +58,10 @@ export class AttributeService {
         const self = this,
             controls = [],
             controlTypes = this.getTypeList(type);
-            // 获取全部的时候不传id
-            if(!currentId){
-                currentId = 'currentId';
-            }
+        // 获取全部的时候不传id
+        if (!currentId) {
+            currentId = 'currentId';
+        }
         if (tinymce && tinymce.get('form-editor')) {
             const $editorBody = jQuery('<div>' + tinymce.get('form-editor').getContent({ format: 'raw' }) + '</div>'),
                 record = {};

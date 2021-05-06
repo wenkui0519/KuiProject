@@ -11,7 +11,9 @@ import { HeightComponent } from './height/height.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { IdModalComponent } from './id-modal/id-modal.component';
 import { ModalModule } from 'src/app/shared/component/modal/modal.module';
-
+import { FontSizeComponent } from './font-size/font-size.component';
+import { FontFamilyComponent } from './font-family/font-family.component';
+// import { BorderComponent } from './border/border.component';
 
 @NgModule({
     imports: [
@@ -28,6 +30,9 @@ import { ModalModule } from 'src/app/shared/component/modal/modal.module';
         HeightComponent,
         PlaceholderComponent,
         IdModalComponent,
+        FontSizeComponent,
+        FontFamilyComponent,
+        // BorderComponent,
     ],
     entryComponents: [
         TitleComponent,

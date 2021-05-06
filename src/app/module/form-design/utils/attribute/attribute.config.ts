@@ -4,13 +4,15 @@ import { IdComponent } from './id/id.component';
 import { WidthComponent } from './width/width.component';
 import { HeightComponent } from './height/height.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
+import { FontFamilyComponent } from './font-family/font-family.component';
+import { FontSizeComponent } from './font-size/font-size.component';
+// import { BorderComponent } from './border/border.component';
 
 // import { AllowSetStyleComponent } from './allow-set-style/allow-set-style.component';
 // import { AmountComponent } from './amount/amount.component';
 // import { AttachmentTemplateComponent } from './attachment-template/attachment-template.component';
 // import { AutoHeightComponent } from './auto-height/auto-height.component';
 // import { BackgroundComponent } from './background/background.component';
-// import { BorderComponent } from './border/border.component';
 // import { ColumnComponent } from './column/column.component';
 // import { CountersignAttributeComponent } from './countersign-attribute/countersign-attribute.component';
 // import { DataSelectorComponent } from './data-selector/data-selector.component';
@@ -20,8 +22,6 @@ import { PlaceholderComponent } from './placeholder/placeholder.component';
 // import { DisplayConditionComponent } from './display-condition/display-condition.component';
 // import { DynamicInfoComponent } from './dynamic-info/dynamic-info.component';
 // import { EditorComponent } from './editor/editor.component';
-// import { FontFamilyComponent } from './font-family/font-family.component';
-// import { FontSizeComponent } from './font-size/font-size.component';
 // import { ForegroundComponent } from './foreground/foreground.component';
 // import { FormatComponent } from './format/format.component';
 // import { HideComponent } from './hide/hide.component';
@@ -44,12 +44,14 @@ export const ATTRIBUTE = {
   'width': WidthComponent,
   'height': HeightComponent,
   'placeholder': PlaceholderComponent,
+//   'border': BorderComponent,
+  'fontFamily': FontFamilyComponent,
+  'fontSize': FontSizeComponent,
 
 
   // 'allowSetStyle': AllowSetStyleComponent,
   // 'auto-height': AutoHeightComponent,
   // 'background': BackgroundComponent,
-  // 'border': BorderComponent,
   // 'column': ColumnComponent,
   // 'countersign-attribute': CountersignAttributeComponent,
   // 'signature-picture-attribute': SignaturePictureAttributeComponent,
@@ -58,8 +60,6 @@ export const ATTRIBUTE = {
   // 'detail-layout': DetailLayoutComponent,
   // 'dynamic-info': DynamicInfoComponent,
   // 'editor': EditorComponent,
-  // 'fontFamily': FontFamilyComponent,
-  // 'fontSize': FontSizeComponent,
   // 'foreground': ForegroundComponent,
   // 'format': FormatComponent,
   // 'hide': HideComponent,

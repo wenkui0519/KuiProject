@@ -1,0 +1,21 @@
+<div class="eui-form-group">
+    <label class="eui-form-control-label"
+        title="flow.frame">flow.frame</label>
+    <div class="eui-form-control-content eui-form-control-static">
+        <label title="flow.no_border" class="eui-m-r-1">
+            <eui-radio name="border-type" [(ngModel)]="borderType" (ngModelChange)="changeBorder()" value="none">
+                <i class="eui-icon icon-no-border"></i>
+            </eui-radio>
+        </label>
+        <label title="flow.bottom" class="eui-m-r-1">
+            <eui-radio name="border-type" [(ngModel)]="borderType" (ngModelChange)="changeBorder()" value="bottom">
+                <i class="eui-icon icon-border-bottom"></i>
+            </eui-radio>
+        </label>
+        <label title="flow.full_border" class="eui-m-r-1">
+            <eui-radio name="border-type" [(ngModel)]="borderType" (ngModelChange)="changeBorder()" value="all">
+                <i class="eui-icon icon-border-all"></i>
+            </eui-radio>
+        </label>
+    </div>
+</div>

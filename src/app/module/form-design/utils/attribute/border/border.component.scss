@@ -1,0 +1,59 @@
+$prefix: "eui-";
+.color-picker-container {
+    .#{$prefix}input-group-addon {
+        width: 35px;
+    }
+    .color-block {
+        width: 16px;
+        height: 16px;
+    }
+}
+.border-attr {
+    position: relative;
+    .border {
+        border-top: 1px solid #000;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        right: 10px;
+        margin-top: -1px;
+        &.width-1 {
+            border-top-width: 1px;
+        }
+        &.width-2 {
+            border-top-width: 2px;
+        }
+        &.width-3 {
+            border-top-width: 3px;
+        }
+        &.dashed {
+            border-top-style: dashed;
+        }
+        &.dotted {
+            border-top-style: dotted;
+        }
+        &.solid {
+            border-top-style: solid;
+        }
+    }
+    .#{$prefix}dropdown-toggle {
+        position: relative;
+        height: 30px;
+        &:after {
+            position: absolute;
+            right: 10px;
+        }
+        .border-value-container {
+            right: 30px;
+        }
+    }
+    .#{$prefix}dropdown-menu {
+        width: 100%;
+    }
+    .#{$prefix}dropdown-item {
+        height: 27px;
+        padding: 0;
+        position: relative;
+    }
+}

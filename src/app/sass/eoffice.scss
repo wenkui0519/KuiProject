@@ -1,10 +1,13 @@
+@import "./eoffice/base/variables";
+
+@import "./eoffice/bootstrap/bootstrap.scss";
 //icon
 // @import "./eoffice/icons/eoffice-icons";
 //component
 // @import "./eoffice/component/content";
 // @import "./eoffice/component/editor";
 // @import "./eoffice/component/select";
-// @import "./eoffice/component/modal";
+@import "./eoffice/component/modal";
 // @import "./eoffice/component/selector";
 // @import "./eoffice/component/radio";
 // @import "./eoffice/component/checkbox";

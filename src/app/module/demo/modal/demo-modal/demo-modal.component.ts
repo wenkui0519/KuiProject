@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalService } from 'src/app/shared/component/modal/modal.service';
+// import { ModalService } from 'src/app/shared/component/modal/modal.service';
 
 @Component({
     selector: 'app-demo-modal',
@@ -7,17 +7,22 @@ import { ModalService } from 'src/app/shared/component/modal/modal.service';
     styleUrls: ['./demo-modal.component.scss']
 })
 export class DemoModalComponent implements OnInit {
-    @Input() text;
+    @Input() params;
 
     constructor(
-        private modalService: ModalService,
+        // private modalService: ModalService,
     ) { }
+    public text = '123';
 
     ngOnInit() {
+        if(this.params){
+            this.text = this.params.text;
+        }
     }
-    
-    ok(){
-        const data = 'ok'
-        this.modalService.ok(data);
-    }
+    // close(){
+    //     this.modalService.close();
+    // }
+    // ok(){
+    //     this.modalService.ok('ok');
+    // }
 }

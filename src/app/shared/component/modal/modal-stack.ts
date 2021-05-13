@@ -121,7 +121,8 @@ export class NgbModalStack {
     //   this._ariaHiddenValues.clear();
     // }
 
-    // 判断当前传进来的component是属于Component对象，还是Template对象。疑问。返回ContentRef对象有什么用，ContentRef并没有对传入数据做任何处理
+    // 判断当前传进来的component是属于Component对象，还是Template对象。
+    // 疑问。返回ContentRef对象有什么用，ContentRef并没有对传入数据做任何处理。这里相当于是一个累的思想，返回的数据都是一个类，即使内部没有对数据进行任何的操作，却也依旧通过特殊的类去包装一层。所以这样操作。1、类的思想。2、为了后续可能增加新的定义留一个接口。
     private _getContentRef(
         moduleCFR: ComponentFactoryResolver,
         contentInjector: Injector,
@@ -177,6 +178,7 @@ export class NgbModalStack {
         this._applicationRef.attachView(componentRef.hostView);
         // FIXME: we should here get rid of the component nativeElement
         // and use `[Array.from(componentNativeEl.childNodes)]` instead and remove the above CSS class.
+        console.log(new ContentRef([[componentNativeEl]], componentRef.hostView, componentRef))
         return new ContentRef([[componentNativeEl]], componentRef.hostView, componentRef);
     }
 

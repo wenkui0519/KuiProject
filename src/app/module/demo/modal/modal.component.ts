@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EuiModal } from 'src/app/shared/component/modal';
+// import { EuiModal } from 'src/app/shared/component/modal';
+import { EuiModal } from 'src/app/shared/component/modal-text';
 
 // import { ModalService } from 'src/app/shared/component/modal/modal.service';
 import { DemoModalComponent } from './demo-modal/demo-modal.component'

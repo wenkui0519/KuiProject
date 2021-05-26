@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { angular } from 'src/app/core/angular-utils'
-import { ModalService } from 'src/app/shared/component/modal/modal.service';
+// import { ModalService } from 'src/app/shared/component/modal/modal.service';
 import { AttributeService } from '../../service/attribute.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AttributeService } from '../../service/attribute.service';
 })
 export class IdModalComponent implements OnInit {
     constructor(
-        private modalService: ModalService,
+        // private modalService: ModalService,
         private attributeService: AttributeService,
     ) { }
 
@@ -45,7 +45,7 @@ export class IdModalComponent implements OnInit {
             alert('此控件ID已被占用，请重新设置');
             return false;
         }
-        this.modalService.ok(this.currentId);
+        // this.modalService.ok(this.currentId);
     }
 
 }

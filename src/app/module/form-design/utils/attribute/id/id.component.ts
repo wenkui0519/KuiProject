@@ -1,5 +1,4 @@
 import tinymce from 'tinymce/tinymce';
-import { ModalService } from 'src/app/shared/component/modal/modal.service';
 
 import {
     ChangeDetectorRef, Component, Input, OnInit
@@ -21,7 +20,7 @@ export class IdComponent implements OnInit {
     constructor(
         private ref: ChangeDetectorRef,
         private attributeService: AttributeService,
-        private modalService: ModalService,
+        // private modalService: ModalService,
     ) {
     }
     public currentId;
@@ -41,7 +40,7 @@ export class IdComponent implements OnInit {
                 this.changeId(id);
             }
         }
-        this.modalService.open(params);
+        // this.modalService.open(params);
     }
 
     public changeId(id) {

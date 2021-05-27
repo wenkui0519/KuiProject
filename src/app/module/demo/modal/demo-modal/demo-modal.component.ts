@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { ModalService } from 'src/app/shared/component/modal/modal.service';
+import { EuiActiveModal } from 'src/app/shared/component/modal-text';
+
 
 @Component({
     selector: 'app-demo-modal',
@@ -10,7 +11,7 @@ export class DemoModalComponent implements OnInit {
     @Input() params;
 
     constructor(
-        // private modalService: ModalService,
+        private activeModal: EuiActiveModal,
     ) { }
     public text = '123';
 
@@ -22,7 +23,7 @@ export class DemoModalComponent implements OnInit {
     // close(){
     //     this.modalService.close();
     // }
-    // ok(){
-    //     this.modalService.ok('ok');
-    // }
+    ok(){
+        this.activeModal.close('ok');
+    }
 }

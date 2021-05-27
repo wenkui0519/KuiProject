@@ -14,20 +14,20 @@ export class ModalComponent implements OnInit {
 
     constructor(
         // private modalService: ModalService,
-        private modal:EuiModal
+        private modal: EuiModal
     ) { }
-
+    public closeResult: string;
     ngOnInit() {
     }
 
     open() {
-      const modalRef = this.modal.open(DemoModalComponent);
+        const modalRef = this.modal.open(DemoModalComponent);
 
-      // modalRef.result.then((result) => {
-      //     this.closeResult = `Closed with: ${result}`;
-      // }, () => {
-      //     this.closeResult = `Modal has been dismissed`;
-      // });
-  }
+        modalRef.result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        }, () => {
+            this.closeResult = `Modal has been dismissed`;
+        });
+    }
 
 }

@@ -34,6 +34,23 @@ export class NgbActiveModal {
  */
 export class NgbModalRef {
     constructor(private _windowCmptRef: ComponentRef<NgbModalWindow>,
-        private _contentRef: ContentRef,) { }
+        private _contentRef: ContentRef,) {
+        this.result = new Promise((resolve, reject) => {
+            // resolve/reject 赋值给当前的全局私有变量，方便外部手动调用触发状态更变
+            this._resolve = resolve;
+            this._reject = reject;
+        })
 
+    }
+    private _resolve: (result?: any) => void;
+    private _reject: (reson?: any) => void;
+    public result: Promise<any>;
+
+    close(result?) {
+        this._resolve(result);
+    }
+
+    // dismiss(reason){
+    //     console.log('dismiss')
+    // }
 }

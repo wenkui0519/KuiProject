@@ -30,9 +30,10 @@ export class NgbModalStack {
         const activeModal = new NgbActiveModal();
         // 创建component实例对象
         const contentRef = this._getContentRef(moduleCFR, options.injector || contentInjector, content, activeModal, options);
-        const windowRef = this._attachWindowComponent(moduleCFR, containerEle, contentRef);
+        const windowRef = this._createWindowComponent(moduleCFR, containerEle, contentRef);
 
         const ngbModalRef: NgbModalRef = new NgbModalRef(windowRef, contentRef);
+        activeModal.close = (result?:any)=>{ ngbModalRef.close(result); }
 
         return ngbModalRef;
     }
@@ -61,7 +62,7 @@ export class NgbModalStack {
         return new ContentRef([[componentNativeEl]], modalRef.hostView, modalRef);
     }
 
-    _attachWindowComponent(moduleCFR: ComponentFactoryResolver, containerEle: any, contentRef: any): ComponentRef<NgbModalWindow> {
+    _createWindowComponent(moduleCFR: ComponentFactoryResolver, containerEle: any, contentRef: any): ComponentRef<NgbModalWindow> {
         const windowFactory = moduleCFR.resolveComponentFactory(NgbModalWindow);
         const windowCpnRef = windowFactory.create(this._injector, contentRef.nodes)
         containerEle.appendChild(windowCpnRef.location.nativeElement);

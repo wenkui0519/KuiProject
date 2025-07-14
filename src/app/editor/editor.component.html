@@ -1,0 +1,129 @@
+<nz-button-group>
+    <button nz-button [disabled]="canUndo" (click)="undo()">undo</button>
+    <button nz-button [disabled]="canRedo" (click)="redo()">redo</button>
+</nz-button-group>
+<nz-button-group>
+    <button nz-button (click)="zoom('in')">放大</button>
+    <button nz-button (click)="zoom('out')">缩小</button>
+    <button nz-button (click)="zoom('actual')">还原</button>
+    <button nz-button (click)="zoom('fit')">自适应</button>
+</nz-button-group>
+<br>
+<div class="container">
+    <div class="left-menu">
+        <div *ngFor="let item of leftMenu" id="eo-graph-element-{{item.key}}" class="menu-item eo-graph-list-item"
+            (click)="addControl(item)">
+            <span class="icon-box">
+                <img [src]="item.icon">
+            </span>
+            <span class="name">{{item.name}}</span>
+        </div>
+    </div>
+    <div #graphEditor class="editor-container"></div>
+    <div class="right-menu">
+        <div class="header">属性设置</div>
+        <div *ngIf="attributes?.length > 0" class="attributes">
+            <ng-container *ngFor="let category of attributes">
+                <div *ngIf="attributes?.length > 0" class="attribute-container">
+                    <h5 *ngIf="category.title">{{category.title}}</h5>
+                    <ng-container *ngFor="let item of category.list">
+                        <ng-container *ngTemplateOutlet="getTemplate(item)">
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<!-- 宽度 -->
+<ng-template #width>
+    <div class="attribute-item">
+        <div class="attribute-label">
+            宽度
+        </div>
+        <div class="attribute-container">
+            <nz-input-group nzSuffix="px">
+                <input type="number" min="5" nz-input [(ngModel)]="attributesValue['width']"
+                    (ngModelChange)="setAttribute($event,'width','style')" />
+            </nz-input-group>
+            <!-- <div class="eui-input-group">
+                <input type="text" class="eui-form-control">
+                <span class="operator-px">px</span>
+            </div> -->
+        </div>
+    </div>
+</ng-template>
+<!-- 高度 -->
+<ng-template #height>
+    <div class="attribute-item">
+        <div class="attribute-label">
+            高度
+        </div>
+        <div class="attribute-container">
+            <nz-input-group nzSuffix="px">
+                <input type="number" min="5" nz-input [(ngModel)]="attributesValue['height']"
+                    (ngModelChange)="setAttribute($event,'height','style')" />
+            </nz-input-group>
+            <!-- <div class="eui-input-group">
+                <input type="text" class="eui-form-control">
+                <span class="operator-px">px</span>
+            </div> -->
+        </div>
+    </div>
+</ng-template>
+<!-- 颜色 -->
+<ng-template #fontColor>
+    <div class="attribute-item">
+        <div class="attribute-label">
+            颜色
+        </div>
+        <div class="attribute-container">
+            <nz-color-picker nzShowText [(ngModel)]="attributesValue['fontColor']"
+                (ngModelChange)="setAttribute($event,'fontColor','style')"></nz-color-picker>
+        </div>
+    </div>
+</ng-template>
+<!-- 位置 -->
+<ng-template #align>
+    <div class="attribute-item">
+        <div class="attribute-label">
+            水平位置
+        </div>
+        <div class="attribute-container">
+            <nz-select nzAllowClear nzPlaceHolder="Choose" [(ngModel)]="attributesValue['align']"
+                (ngModelChange)="setAttribute($event,'align','style')">
+                <nz-option *ngFor="let option of labelHorizontalArr" [nzValue]="option.value"
+                    [nzLabel]="option.label"></nz-option>
+            </nz-select>
+        </div>
+    </div>
+</ng-template>
+<ng-template #verticalAlign>
+    <div class="attribute-item">
+        <div class="attribute-label">
+            垂直位置
+        </div>
+        <div class="attribute-container">
+            <nz-select nzAllowClear nzPlaceHolder="Choose" [(ngModel)]="attributesValue['verticalAlign']"
+                (ngModelChange)="setAttribute($event,'verticalAlign','style')">
+                <nz-option *ngFor="let option of labelVerticalArr" [nzValue]="option.value"
+                    [nzLabel]="option.label"></nz-option>
+            </nz-select>
+        </div>
+    </div>
+</ng-template>
+
+
+
+<nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="false" [nzWidth]="720" [nzVisible]="visible"
+    nzTitle="Create" [nzFooter]="footerTpl" (nzOnClose)="close()">
+    
+    <div *nzDrawerContent>流程设置</div>
+
+    <ng-template #footerTpl>
+        <div style="float: right">
+            <button nz-button style="margin-right: 8px;" (click)="close()">Cancel</button>
+            <button nz-button nzType="primary" (click)="close()">Submit</button>
+        </div>
+    </ng-template>
+</nz-drawer>

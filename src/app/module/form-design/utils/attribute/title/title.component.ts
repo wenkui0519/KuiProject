@@ -4,11 +4,18 @@ import {
 } from '@angular/core';
 
 import { AttributeService } from '../../service/attribute.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+    standalone: true,
     selector: 'control-title',
     templateUrl: './title.component.html',
-    styleUrls: ['./title.component.scss']
+    styleUrls: ['./title.component.scss'],
+    imports: [
+        CommonModule,
+        FormsModule,
+    ],
 })
 export class TitleComponent implements OnInit {
 
@@ -22,11 +29,11 @@ export class TitleComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title = this.attributeService.get(this.attribute, 'title', 'attribute');
+        this.title = this.attributeService.get(this.attribute, 'attribute.title');
         this.ref.detectChanges();
     }
 
     public changeTitle(value) {
-        this.attributeService.set(this.attribute, 'title', value, 'attribute');
+        this.attributeService.set(this.attribute, 'attribute.title', value);
     }
 }

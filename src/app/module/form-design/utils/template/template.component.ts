@@ -3,12 +3,17 @@ import {
     OnInit, SimpleChange, ViewChild, ViewContainerRef, ViewEncapsulation
 } from '@angular/core';
 import { ATTRIBUTE } from '../attribute/attribute.config';
+import { CommonModule } from '@angular/common';
 
 @Component({
+    standalone: true,
     selector: 'attribute-template',
     templateUrl: './template.component.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['./template.component.scss']
+    styleUrls: ['./template.component.scss'],
+    imports: [
+        CommonModule,
+    ]
 })
 export class TemplateComponent implements OnInit, OnChanges, AfterContentInit {
 

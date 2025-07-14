@@ -1,10 +1,17 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ControlAttributeService } from './control-attribute.service';
+import { CommonModule } from '@angular/common';
+import { TemplateComponent } from '../../utils/template/template.component';
 
 @Component({
+  standalone: true,
   selector: 'form-control-attribute',
   templateUrl: './control-attribute.component.html',
-  styleUrls: ['./control-attribute.component.scss']
+  styleUrls: ['./control-attribute.component.scss'],
+  imports: [
+    CommonModule,
+    TemplateComponent,
+  ],
 })
 export class ControlAttributeComponent implements OnInit {
   private _attributes;

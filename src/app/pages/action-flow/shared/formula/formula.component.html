@@ -1,0 +1,19 @@
+<div class="kp-form-group kp-mb-0">
+    <label class="kp-form-control-label-3 kp-pl-0 kp-pr-0">
+        规则设置
+    </label>
+    <div class="kp-form-control-content-9">
+        <div class="kp-input-group">
+            <input class="kp-form-control" [placeholder]="toolTips" type="text" disabled />
+            <button *ngIf="formula" class="delete" type="button" (click)="clear()">
+                <i class="eui-icon icon-close-circular"></i>
+            </button>
+            <div class="kp-input-group-append">
+                <button class="kp-input-group-text kp-btn kp-btn-outline-secondary" type="button"
+                    (click)="openModal()">
+                    <i class="eui-icon icon-more-point1" style="font-size: 14px;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

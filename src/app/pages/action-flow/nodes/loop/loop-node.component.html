@@ -1,0 +1,56 @@
+<div class="action-card-header kp-w-100 kp-d-flex kp-justify-content-between kp-align-items-center">
+    <div class="card-title">
+        @if(!nodeNameEdit){
+        <div class="kp-d-flex kp-align-items-center">
+            <span class="title-icon eui-icon icon-refresh kp-bg-primary-active kp-text-primary"></span>
+            <div class="card-title-text">{{model.title}}</div>
+            <span class="title-edit kp-cursor-pointer kp-text-hover-primary kp-pl-2" (click)="editName()">
+                <i class="eui-icon icon-edit"></i>
+            </span>
+        </div>
+        }
+        @else{
+        <div class="kp-d-flex kp-align-items-center">
+            <span class="title-icon eui-icon icon-refresh kp-bg-primary-active kp-text-primary"></span>
+            <div class="kp-input-group">
+                <input class="kp-form-control kp-border-primary" [(ngModel)]="model.title" type="text" />
+            </div>
+            <span class="kp-cursor-pointer change-title kp-ml-2" (click)="saveName()">
+                <i class="eui-icon icon-true"></i>
+            </span>
+        </div>
+        }
+    </div>
+    <div class="card-action-group">
+        <!-- <kp-action-group *ngIf="!disabled" [buttons]="buttons" [hasTrigger]="false" (select)="invokeAction($event)">
+        </kp-action-group> -->
+    </div>
+</div>
+<div class="kp-content">
+    <div class="kp-form-group">
+        <label class="kp-form-control-label-3 kp-pl-0 kp-pr-0" euiI18nText="eui.flow_graph.loop_type"></label>
+        <div class="kp-form-control-content-9 kp-d-flex kp-flex-column radio-container">
+            <!-- <kp-radio [(ngModel)]="loopType" name="loopType" value="number" (ngModelChange)="changeType($event)">
+                <span euiI18nText="eui.flow_graph.loop_number"></span>
+            </kp-radio>
+            <kp-radio [(ngModel)]="loopType" name="loopType" value="condition" (ngModelChange)="changeType($event)">
+                <span euiI18nText="eui.flow_graph.loop_by_formula"></span>
+            </kp-radio> -->
+        </div>
+    </div>
+    @if(loopType === 'number'){
+    <div class="kp-form-group kp-mb-0">
+        <label class="kp-form-control-label-3 kp-pl-0 kp-pr-0">循环次数</label>
+        <div class="kp-form-control-content-9">
+            <div class="kp-input-group">
+                <input class="kp-form-control" type="number" min="0" [(ngModel)]="loopNumber"
+                    (ngModelChange)="changeNumber($event)" [disabled]="disabled">
+            </div>
+        </div>
+    </div>
+    }
+    @else{
+    <action-flow-formula [formula]="loopFormula" [actionInfo]="actionInfo"
+        (change)="changeFormula($event)"></action-flow-formula>
+    }
+</div>

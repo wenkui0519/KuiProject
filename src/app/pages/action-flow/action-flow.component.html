@@ -1,0 +1,67 @@
+<div class="design-page kp-h-100 kp-d-flex">
+    <div class="action-flow-container kp-flex-fill kp-d-flex kp-align-items-center kp-py-3">
+        <kp-flow-gram [config]="config" [initialData]="flowModel.nodes"></kp-flow-gram>
+    </div>
+</div>
+
+
+<ng-template #NodeTemplate let-data let-nodeType="nodeType" let-flowNodeOperation="flowNodeOperation">
+    <div class="action-flow-node-container">
+        @switch (nodeType) {
+        <!-- 开始节点 -->
+        @case ('start') {
+        <action-flow-start-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-start-node>
+        }
+        <!-- 结束节点 -->
+        @case ('end') {
+        <action-flow-end-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation" [disabled]="disabled"
+            [actionInfo]="paramsMap[data.node_id]"></action-flow-end-node>
+        }
+        <!-- 分支节点 -->
+        @case ('switch') {
+        <action-flow-switch-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-switch-node>
+        }
+        @case ('case') {
+        <action-flow-if-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation" [disabled]="disabled"
+            [actionInfo]="paramsMap[data.node_id]"></action-flow-if-node>
+        }
+        @case ('caseDefault') {
+        <action-flow-case-default-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-case-default-node>
+        }
+        <!-- 异常捕获节点 -->
+        @case ('tryCatch') {
+        <action-flow-try-catch-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-try-catch-node>
+        }
+        @case ('catchBlock') {
+        <action-flow-if-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation" [disabled]="disabled"
+            [actionInfo]="paramsMap[data.node_id]"></action-flow-if-node>
+        }
+        <!-- if -->
+        @case ('if') {
+        <action-flow-if-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation" [disabled]="disabled"
+            [actionInfo]="paramsMap[data.node_id]"></action-flow-if-node>
+        }
+        @case ('ifBlock') {
+        <action-flow-if-block-node [model]="data" [flowNodeOperation]="flowNodeOperation" [disabled]="disabled"
+            [actionInfo]="paramsMap[data.node_id]"></action-flow-if-block-node>
+        }
+        <!-- 循环节点 -->
+        @case ('loop') {
+        <action-flow-loop-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-loop-node>
+        }
+        @case ('breakLoop') {
+        <action-flow-break-loop-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-break-loop-node>
+        }
+        @default {
+        <action-flow-default-node class="w-360" [model]="data" [flowNodeOperation]="flowNodeOperation"
+            [disabled]="disabled" [actionInfo]="paramsMap[data.node_id]"></action-flow-default-node>
+        }
+        }
+    </div>
+</ng-template>

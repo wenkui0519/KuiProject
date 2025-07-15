@@ -24,6 +24,7 @@
     "@angular/common": "^20.1.0",
     "@angular/compiler": "^20.1.0",
     "@angular/core": "^20.1.0",
+    "@angular/elements": "^20.1.0",
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
     "@angular/platform-server": "^20.1.0",
@@ -48,6 +49,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "less": "^4.3.0",
+    "less-loader": "^12.3.0",
     "typescript": "~5.8.2"
   }
 }

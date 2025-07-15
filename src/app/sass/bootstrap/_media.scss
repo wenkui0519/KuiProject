@@ -1,0 +1,8 @@
+.#{$prefix}media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.#{$prefix}media-body {
+  flex: 1;
+}

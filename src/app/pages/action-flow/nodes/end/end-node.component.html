@@ -1,0 +1,24 @@
+<div class="action-card-header kp-w-100 kp-d-flex kp-justify-content-between kp-align-items-center">
+    <div class="card-title">
+        @if(!nodeNameEdit){
+        <div class="kp-d-flex kp-align-items-center">
+            <span class="title-icon eui-icon icon-head-quit kp-bg-primary-active kp-text-primary"></span>
+            <div class="card-title-text">{{model.title}}</div>
+            <span class="title-edit kp-cursor-pointer kp-text-hover-primary kp-pl-2" (click)="editName()">
+                <i class="eui-icon icon-edit"></i>
+            </span>
+        </div>
+        }
+        @else{
+        <div class="kp-d-flex kp-align-items-center">
+            <span class="title-icon eui-icon icon-head-quit kp-bg-primary-active kp-text-primary"></span>
+            <div class="kp-input-group">
+                <input class="kp-form-control kp-border-primary" [(ngModel)]="model.title" type="text" />
+            </div>
+            <span class="kp-cursor-pointer change-title kp-ml-2" (click)="saveName()">
+                <i class="eui-icon icon-true"></i>
+            </span>
+        </div>
+        }
+    </div>
+</div>

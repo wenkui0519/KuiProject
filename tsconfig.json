@@ -33,7 +33,10 @@
       ],
       "ng-zorro-antd/*": [
         "node_modules/ng-zorro-antd/*"
-      ]
+      ],
+      "@shared-component/*": [
+        "src/app/shared/*"
+      ],
     },
     "esModuleInterop": true,
   },

@@ -1,0 +1,11 @@
+//
+// Visibility utilities
+//
+
+.#{$prefix}visible {
+  @include invisible(visible);
+}
+
+.#{$prefix}invisible {
+  @include invisible(hidden);
+}

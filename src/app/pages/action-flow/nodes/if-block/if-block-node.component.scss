@@ -1,0 +1,9 @@
+.if-block {
+    color: red;
+    width: 75px;
+    text-align: center;
+
+    &.is-true {
+        color: green;
+    }
+}

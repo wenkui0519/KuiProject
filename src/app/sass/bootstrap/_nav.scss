@@ -1,0 +1,120 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets.#{$prefix} Works with
+// `<nav>`s or `<ul>`s.#{$prefix}
+
+.#{$prefix}nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.#{$prefix}nav-link {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  // Disabled state lightens text
+  &.#{$prefix}disabled {
+    color: $nav-link-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+//
+// Tabs
+//
+
+.#{$prefix}nav-tabs {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+  .#{$prefix}nav-item {
+    margin-bottom: -$nav-tabs-border-width;
+  }
+
+  .#{$prefix}nav-link {
+    border: $nav-tabs-border-width solid transparent;
+    @include border-top-radius($nav-tabs-border-radius);
+
+    @include hover-focus {
+      border-color: $nav-tabs-link-hover-border-color;
+    }
+
+    &.#{$prefix}disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .#{$prefix}nav-link.active,
+  .#{$prefix}nav-item.show .#{$prefix}nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+  }
+
+  .#{$prefix}dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+    // Remove the top rounded corners here since there is a hard edge above the menu
+    @include border-top-radius(0);
+  }
+}
+
+
+//
+// Pills
+//
+
+.#{$prefix}nav-pills {
+  .#{$prefix}nav-link {
+    @include border-radius($nav-pills-border-radius);
+  }
+
+  .#{$prefix}nav-link.active,
+  .show > .#{$prefix}nav-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+  }
+}
+
+
+//
+// Justified variants
+//
+
+.#{$prefix}nav-fill {
+  .#{$prefix}nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.#{$prefix}nav-justified {
+  .#{$prefix}nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.#{$prefix}active`
+
+.#{$prefix}tab-content {
+  > .#{$prefix}tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}

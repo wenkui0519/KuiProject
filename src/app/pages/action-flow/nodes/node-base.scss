@@ -1,0 +1,63 @@
+.action-card-header {
+    .card-title {
+        .kp-input-group {
+            width: auto;
+        }
+
+        .title-edit {
+            visibility: hidden;
+        }
+
+        &:hover {
+            .title-edit {
+                visibility: visible;
+            }
+        }
+
+        .card-title-text {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .title-icon {
+            display: inline-block;
+            width: 24px;
+            text-align: center;
+            border-radius: 2px;
+            margin-right: 0.5rem;
+        }
+        .change-title {
+            display: inline-block;
+            color: #28a745;
+            text-align: center;
+            width: 24px;
+            border-radius: 2px;
+
+            &:hover {
+                background: rgba(0, 168, 84, 0.1);
+            }
+        }
+    }
+}
+.kp-content {
+    margin-top: 1rem;
+    padding: 0;
+    background-color: transparent;
+
+    .kp-form-group {
+        margin-bottom: 10px;
+    }
+}
+.delete {
+    position: absolute;
+    right: 40px;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 34px;
+    z-index: 10;
+    color: #999;
+    outline: none;
+    cursor: pointer;
+}

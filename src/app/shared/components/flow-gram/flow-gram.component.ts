@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, Injector, Input, OnInit } from '@angular/core';
 import { FlowGramNodeComponent } from './flow-gram-node/flow-gram-node.component';
-import '../../../script/flow-gram/fixed-layout-webcomponent.min.js';
+// import '../../../script/flow-gram/fixed-layout-webcomponent.min.js';
+import '../../../script/flow-gram/action-flow-editor.min.js';
 import { createCustomElement } from '@angular/elements';
 import { FlowGramConfig, FlowNodeJSON } from './flow-gram.interface';
 import { FlowGramService } from './flow-gram.service';
@@ -40,9 +41,14 @@ export class EuiFlowGramComponent implements OnInit, AfterViewInit {
     public isLoaded = false;
 
     ngOnInit() {
-        if (!customElements.get('fixed-node-form')) {
+        // if (!customElements.get('fixed-node-form')) {
+        //     const el = createCustomElement(FlowGramNodeComponent, { injector: this.injector });
+        //     customElements.define('fixed-node-form', el);
+        // }
+
+        if (!customElements.get('action-flow-node')) {
             const el = createCustomElement(FlowGramNodeComponent, { injector: this.injector });
-            customElements.define('fixed-node-form', el);
+            customElements.define('action-flow-node', el);
         }
         // 多语言处理
         this.config['langs'] = this.flowGramService.getLangs();

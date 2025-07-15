@@ -41,11 +41,6 @@ export class EuiFlowGramComponent implements OnInit, AfterViewInit {
     public isLoaded = false;
 
     ngOnInit() {
-        // if (!customElements.get('fixed-node-form')) {
-        //     const el = createCustomElement(FlowGramNodeComponent, { injector: this.injector });
-        //     customElements.define('fixed-node-form', el);
-        // }
-
         if (!customElements.get('action-flow-node')) {
             const el = createCustomElement(FlowGramNodeComponent, { injector: this.injector });
             customElements.define('action-flow-node', el);
